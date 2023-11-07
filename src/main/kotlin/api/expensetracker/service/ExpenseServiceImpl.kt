@@ -24,7 +24,7 @@ class ExpenseServiceImpl (
     }
 
     override fun getAllExpenses(): List<ExpenseDTO> {
-        val expenses = expenseRepository.findAllMovies()
+        val expenses = expenseRepository.findAllExpenses()
 
         if(expenses.isEmpty()){
             throw ExpenseException("List of expenses is empty.")
@@ -37,7 +37,7 @@ class ExpenseServiceImpl (
 
     override fun deleteAllExpenses(): List<ExpenseDTO> {
         expenseRepository.deleteAll()
-        val expenses = expenseRepository.findAllMovies()
+        val expenses = expenseRepository.findAllExpenses()
 
         if(expenses.isNotEmpty()){
             throw ExpenseException("Expenses couldn't be deleted. Something went wrong")

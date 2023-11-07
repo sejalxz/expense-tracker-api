@@ -7,5 +7,5 @@ import java.util.UUID
 
 interface ExpenseRepository: CrudRepository<Expense, UUID>{
     @Query(value = "SELECT expense FROM Expense as expense")
-    fun findAllMovies() : List<Expense>
+    fun findAllExpenses() : List<Expense>
 }

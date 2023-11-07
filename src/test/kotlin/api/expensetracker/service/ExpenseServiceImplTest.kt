@@ -52,20 +52,20 @@ class ExpenseServiceImplTest {
             Expense(UUID.randomUUID(), "Expense 2", 200.0, LocalDate.now(), "Category 2")
         )
 
-        Mockito.`when`(expenseRepository.findAllMovies()).thenReturn(expenseEntities)
+        Mockito.`when`(expenseRepository.findAllExpenses()).thenReturn(expenseEntities)
         val expenseDTOs = expenseEntities.map { expenseMapper.fromEntity(it) }
 
         val result = expenseService.getAllExpenses()
 
         assert(result == expenseDTOs)
-        Mockito.verify(expenseRepository, Mockito.times(1)).findAllMovies()
+        Mockito.verify(expenseRepository, Mockito.times(1)).findAllExpenses()
     }
 
     @Test
     fun testDeleteAllExpenses() {
-        Mockito.`when`(expenseRepository.findAllMovies()).thenReturn(emptyList()) // Simulate an empty list of expenses
+        Mockito.`when`(expenseRepository.findAllExpenses()).thenReturn(emptyList()) // Simulate an empty list of expenses
         Mockito.`when`(expenseRepository.deleteAll()).then {
-            Mockito.`when`(expenseRepository.findAllMovies()).thenReturn(emptyList())
+            Mockito.`when`(expenseRepository.findAllExpenses()).thenReturn(emptyList())
             null
         }
 
@@ -73,7 +73,7 @@ class ExpenseServiceImplTest {
 
         assert(result.isEmpty())
         Mockito.verify(expenseRepository, Mockito.times(1)).deleteAll()
-        Mockito.verify(expenseRepository, Mockito.times(1)).findAllMovies()
+        Mockito.verify(expenseRepository, Mockito.times(1)).findAllExpenses()
     }
 
     @Test
