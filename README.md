@@ -1,5 +1,17 @@
 # Expense Tracker API
-Expense Tracker API is a backend service for managing expenses. To run this API, you need to configure the application.properties file with your database connection details and set up environment variables for PostgreSQL. This README will guide you through the necessary steps to get the API up and running using Docker Compose.
+Expense Tracker API is a backend service for managing expenses.
+
+It is built using the following technologies:
+
+1. Kotlin: The primary programming language used for developing the API.
+
+2. Spring Boot: The framework for building robust and scalable Java-based applications, providing features like RESTful web services.
+
+3. Docker: Docker is used for running the PostgreSQL database as a container, providing a portable and consistent database environment.
+
+To run this API, you need to configure the **application.properties** file with your database connection details and set up environment variables for PostgreSQL. 
+
+This README will guide you through the necessary steps to get the API up and running using Docker Compose.
 
 ## Prerequisites
 Before setting up and running the Expense Tracker API, make sure you have the following prerequisites installed on your system:
@@ -38,20 +50,21 @@ After configuring the **application.properties** file and setting the environmen
 
 2. Open a terminal window.
 
-3. Run the following command to start the API service in the background (detached mode):
+3. Run the following command to start the PostgreSQL database in the background (detached mode):
 
 ``` 
 docker compose up -d
 ```
-This command will start the API service and PostgreSQL database in the background, and your Expense Tracker API will be accessible at the specified URL and port.
+This command will start PostgreSQL database in the background.
 
 
 
 ### Accessing the API
-You can access the API using the specified URL and port, which you configured in the application.properties file. The API will be available at **http://<YOUR_API_URL>:<PORT>**.
+Run the application locally.
+
+The Expense Tracker API will be accessible locally at http://localhost:8080/api/expenses.
 
 That's it! You have successfully set up and run the Expense Tracker API. You can now start making API requests and managing your expenses.
 
-
-
-
+### Future Scope
+Add authentication to the API.
