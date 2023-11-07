@@ -31,11 +31,6 @@ dependencies {
 	testImplementation("io.mockk:mockk:1.10.4")
 	testImplementation("com.ninja-squad:springmockk:3.0.1")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
-
-	implementation("org.springframework.boot:spring-boot-starter-security")
-	implementation("org.springframework.security:spring-security-oauth2-resource-server")
-	implementation("org.springframework.security:spring-security-oauth2-jose")
-	implementation("org.springframework.security:spring-security-config")
 }
 
 tasks.withType<KotlinCompile> {
