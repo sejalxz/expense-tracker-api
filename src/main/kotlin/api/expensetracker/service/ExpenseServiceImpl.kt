@@ -58,7 +58,6 @@ class ExpenseServiceImpl (
         if(!expenseExists){
             throw ExpenseException("Expense with $id not found.")
         }
-
         expenseRepository.deleteById(id)
     }
 

@@ -1,4 +1,4 @@
-package api.expensetracker
+package api.expensetracker.controller
 
 import api.expensetracker.dto.ExpenseDTO
 import api.expensetracker.response.DeleteAllResponse

@@ -1,6 +1,5 @@
 package api.expensetracker.controller
 
-import api.expensetracker.ExpenseController
 import api.expensetracker.dto.ExpenseDTO
 import api.expensetracker.service.ExpenseService
 import com.ninjasquad.springmockk.MockkBean
